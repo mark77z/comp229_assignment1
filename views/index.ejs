@@ -1,0 +1,31 @@
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+  
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to the <%= title %> page</h1>
+    </div>
+    <% if (title == "Home"){ %>
+      <p>Name: <%= contactName %></p>
+    <% } %>
+
+    <% if (title == "Contact"){ %>
+      <form action="/contact" method="POST">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <input type="submit" value="Submit">
+      </form> 
+    <% } %>
+  </main>
+  
+<%- include partials/bottom_nav.ejs %>  
+
+<%- include partials/footer.ejs %>
+  
+
+
+
+
