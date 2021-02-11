@@ -29,7 +29,7 @@ html, body {
 
 main.masthead {
     position: relative;
-    padding-top: calc(7rem + 72px);
+    padding-top: calc(7rem + 20px);
     padding-bottom: 7rem;
     flex: auto;
   }
@@ -320,3 +320,20 @@ main.masthead {
     background-size: cover;
     padding-bottom: 2%;
   }
+
+/*--------------------------------------------------------------
+# Error
+--------------------------------------------------------------*/
+.error-container {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.error-actions {
+  margin-top:15px;
+  margin-bottom:15px;
+}
+
+.error-actions .btn { 
+  margin-right:10px; 
+}
