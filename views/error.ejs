@@ -1,14 +1,20 @@
-<%- include partials/header.ejs %>
+<!-- 
+  error.ejs
+  Marco Mejia 301082190
+  02 Feb 2021
+  
+  Error page
+-->
 
+<%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
 
+<!-- Error Content -->
 <div class="container">
     <h1><%= message %></h1>
     <h2><%= error.status %></h2>
-    <pre><%= error.stack %></pre>
 </div>
-
+<!-- End Error Content -->
 
 <%- include partials/bottom_nav.ejs %>
-
 <%- include partials/footer.ejs %>

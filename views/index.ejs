@@ -1,31 +1,34 @@
-<%- include partials/header.ejs %>
+<!-- 
+  index.ejs
+  Marco Mejia 301082190
+  02 Feb 2021
 
+  Home page
+-->
+
+<%- include partials/header.ejs %>
 <%- include partials/main_nav.ejs %>
   
-
-  <!-- Main Content -->
-  <main class="container">
-    <div class="jumbotron">
-      <h1 class="display-4">Welcome to the <%= title %> page</h1>
+  <!-- Home Content -->
+  <main class="masthead text-center text-black">
+    <div class="masthead-content">
+      <div class="container">
+        <% if(contactName){%>
+          <h1 class="masthead-heading">Hello <%= contactName %>, to my first assignment!</h1>
+        <%}else{%>
+          <h1 class="masthead-heading">Hello, to my first assignment!</h1>
+        <%}%>
+        <h2 class="masthead-subheading">COMP229 - Web application development</h2>
+        <h3 class="masthead-subsubheading">
+          The mission of this site is to achieve the highest standards in the practice of web development,
+          using ExpressJS and implementing the EJS templating. 
+        </h3>
+        <a href="/about" class="btn btn-primary btn-xl rounded-pill mt-5">About Me</a>
+        <a href="/contact" class="btn btn-primary btn-xl rounded-pill mt-5">Contact Me</a>
+      </div>
     </div>
-    <% if (title == "Home"){ %>
-      <p>Name: <%= contactName %></p>
-    <% } %>
-
-    <% if (title == "Contact"){ %>
-      <form action="/contact" method="POST">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value=""><br>
-        <input type="submit" value="Submit">
-      </form> 
-    <% } %>
   </main>
+  <!-- End Home Content -->
   
 <%- include partials/bottom_nav.ejs %>  
-
 <%- include partials/footer.ejs %>
-  
-
-
-
-

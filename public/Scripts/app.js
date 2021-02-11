@@ -1,4 +1,9 @@
-// IIFE -- Immediately Invoked Function Expression
+/*--------------------------------------------------------------
+# app.js
+# Marco Mejia
+# 301082190
+# 02 Feb 2021
+--------------------------------------------------------------*/
 (function(){
 
     function Start()

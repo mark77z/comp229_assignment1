@@ -1,7 +1,14 @@
+/*--------------------------------------------------------------
+# index.js
+# Marco Mejia
+# 301082190
+# 02 Feb 2021
+--------------------------------------------------------------*/
+
 var express = require('express');
 var router = express.Router();
 
-let contactName = 'kkkk';
+let contactName = '';
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -21,27 +28,27 @@ router.get('/home', function(req, res, next) {
 
 /* GET About Us page. */
 router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About'});
+  res.render('about', { title: 'About'});
 });
 
 /* GET Products page. */
-router.get('/products', function(req, res, next) {
-  res.render('index', { title: 'Products'});
+router.get('/projects', function(req, res, next) {
+  res.render('projects', { title: 'Projects'});
 });
 
 /* GET Services page. */
 router.get('/services', function(req, res, next) {
-  res.render('index', { title: 'Services'});
+  res.render('services', { title: 'Services'});
 });
 
 /* GET Contact Us page. */
 router.get('/contact', function(req, res, next) {
-  res.render('index', { title: 'Contact'});
+  res.render('contact', { title: 'Contact'});
 });
 
 /* POST Contact Us page. */
 router.post('/contact', function(req, res, next) {
-  contactName = req.body.fname;
+  contactName = req.body.fullname;
   res.redirect('/home');
 });
 

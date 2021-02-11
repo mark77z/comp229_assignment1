@@ -1,3 +1,10 @@
+/*--------------------------------------------------------------
+# app.js
+# Marco Mejia
+# 301082190
+# 02 Feb 2021
+--------------------------------------------------------------*/
+
 // installed 3rd party packages
 let createError = require('http-errors');
 let express = require('express');
@@ -6,7 +13,6 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
 let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
 
 let app = express();
 
@@ -22,7 +28,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
