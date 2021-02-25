@@ -337,3 +337,59 @@ main.masthead {
 .error-actions .btn { 
   margin-right:10px; 
 }
+
+/*--------------------------------------------------------------
+# Book List
+--------------------------------------------------------------*/
+
+.book-list{
+  background-color: #74EBD5;
+    background-image: linear-gradient(240deg, #74EBD5 0%, #9FACE6 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    padding-bottom: 6%;
+}
+
+/*--------------------------------------------------------------
+# Book Add
+--------------------------------------------------------------*/
+
+.book-add{
+  background-color: #74EBD5;
+    background-image: linear-gradient(240deg, #74EBD5 0%, #9FACE6 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    padding-bottom: 6%;
+}
+
+/*--------------------------------------------------------------
+# Book Edit
+--------------------------------------------------------------*/
+
+.book-edit{
+  background-color: #74EBD5;
+    background-image: linear-gradient(240deg, #74EBD5 0%, #9FACE6 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    padding-bottom: 6%;
+}
+
+/*--------------------------------------------------------------
+# Register page
+--------------------------------------------------------------*/
+
+.register{
+  background-color: #74EBD5;
+    background-image: linear-gradient(240deg, #74EBD5 0%, #9FACE6 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: scroll;
+    background-size: cover;
+    padding-bottom: 6%;
+}
