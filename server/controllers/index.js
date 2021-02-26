@@ -1,3 +1,12 @@
+/*--------------------------------------------------------------
+# index.js
+# Marco Mejia
+# 301082190
+# 25 Feb 2021
+
+Index Controller
+----------------------------------------------------------------*/
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');

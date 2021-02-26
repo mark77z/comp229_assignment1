@@ -1,3 +1,12 @@
+/*--------------------------------------------------------------
+# secure.js
+# Marco Mejia
+# 301082190
+# 25 Feb 2021
+
+Secure Controller
+----------------------------------------------------------------*/
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');

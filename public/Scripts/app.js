@@ -10,15 +10,17 @@
     {
         console.log("App Started...");
 
+        //Find all delete buttons
         let deleteButtons = document.querySelectorAll('.btn-danger');
 
+        //Add event to each delete button
         for(button of deleteButtons)
         {
             button.addEventListener('click', (event) => {
                 if(!confirm("Are you sure?"))
                 {
                     event.preventDefault();
-                    window.location.assign('book-list');
+                    window.location.assign('contacts-list');
                 }
             });
         }

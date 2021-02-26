@@ -1,3 +1,12 @@
+/*--------------------------------------------------------------
+# user.js
+# Marco Mejia
+# 301082190
+# 25 Feb 2021
+
+User Model
+----------------------------------------------------------------*/
+
 //require modules for the User Model
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');

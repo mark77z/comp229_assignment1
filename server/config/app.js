@@ -3,6 +3,8 @@
 # Marco Mejia
 # 301082190
 # 02 Feb 2021
+
+Application configuration file
 --------------------------------------------------------------*/
 
 // installed 3rd party packages
