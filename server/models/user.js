@@ -9,30 +9,35 @@ let User = mongoose.Schema({
         type: String,
         default: "",
         trim: true,
-        required: "username is required"
+        required: "Username is required"
     },
-    /*
-    password: 
-    {
-        type: String,
-        default: "",
-        trim: true,
-        required: "password is required"
-    }
-    */
     email:
     {
         type: String,
         default: "",
         trim: true,
-        required: "email address is required"
+        required: "Email Address is required"
     },
-    displayName:
+    phone:
     {
         type: String,
         default: "",
         trim: true,
-        required: "Display Name is required"
+        required: "Phone Number is required"
+    },
+    address:
+    {
+        type: String,
+        default: "",
+        trim: true,
+        required: "Address is required"
+    },
+    name:
+    {
+        type: String,
+        default: "",
+        trim: true,
+        required: "Name is required"
     },
     created:
     {

@@ -55,11 +55,21 @@
         <% } else  { %>
         <li class="nav-item">
         <% } %>
-          <a class="nav-link" href="/contact"><i class="fas fa-address-book"></i> Contact Me</a>
+          <a class="nav-link" href="/contact"><i class="fas fa-address-book"></i> Contact</a>
         </li>
 
-        <% if (typeof displayName == 'string' && displayName){ %>
-        <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome <%= displayName %></li>
+        <% if (typeof name == 'string' && name){ %>
+            <% if (title == "Business Contact List") { %>
+            <li class="nav-item active">
+            <% } else  { %>
+            <li class="nav-item">
+            <% } %>
+              <a class="nav-link" href="/contacts-list"><i class="fas fa-id-card"></i> Contacts List</a>
+            </li>  
+        <% }%>
+
+        <% if (typeof name == 'string' && name){ %>
+        <li class="navbar-text"><i class="fas fa-lg fa-user"></i> Welcome <%= name %></li>
         <li class="nav-item">
           <a href="/logout" class="nav-link"><i class="fas fa-lg fa-sign-out-alt"></i> Logout</a>
         </li>

@@ -1,0 +1,59 @@
+<!-- 
+  contacts_list.ejs
+  Marco Mejia 301082190
+  24 Feb 2021
+
+  Contacts List page
+-->
+
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+  
+  <!-- Contacts List Content -->
+  <main class="contacts-list">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-offset-3 col-md-11">
+              <div class="section-title">
+                <h2><%= title %></h2>
+              </div>
+                <table class="table table-bordered table -striped table-hover">
+                    <!-- Header Row-->
+                    <thead class="thead-dark">
+                      <tr class="d-flex">
+                        <th class="text-center col-2">Name</th>
+                        <th class="text-center col-2">Phone</th>
+                        <th class="text-center col-3">Email</th>
+                        <th class="text-center col-3">Address</th>
+                        <th class="text-center col-1"></th>
+                        <th class="text-center col-1"></th>
+                    </tr>
+                    </thead>
+                    <!-- Repeteable Template Row -->
+                    <tbody>
+                      <% for(let count = 0; count< ContactsList.length; count++){ %>
+                        <tr class="d-flex">
+                            <td class="text-center col-2"><%= ContactsList[count].name %> </td>
+                            <td class="text-center col-2"><%= ContactsList[count].phone %> </td>
+                            <td class="text-center col-3"><%= ContactsList[count].email %> </td>
+                            <td class="text-center col-3"><%= ContactsList[count].address %> </td>
+                            <td class="text-center col-1">
+                              <a href="/contacts-list/edit/<%= ContactsList[count].id %>" class="btn btn-primary btn-sm">
+                              <i class="fas fa-pencil-alt"></i> Edit</a>
+                            </td>
+                            <td class="text-center col-1">
+                              <a href="/contacts-list/delete/<%= ContactsList[count].id %>" class="btn btn-danger btn-sm">
+                              <i class="fas fa-trash-alt"></i> Delete</a>
+                            </td>
+                        </tr>
+                      <%} %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+      </div>
+  </main>
+  <!-- End Contacts List  -->
+  
+<%- include ../partials/bottom_nav.ejs %>  
+<%- include ../partials/footer.ejs %>

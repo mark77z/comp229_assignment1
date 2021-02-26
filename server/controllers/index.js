@@ -10,23 +10,23 @@ let User = userModel.User; // alias
 let contactName = '';
 
 module.exports.displayHomePage = (req,res,next) => {
-    res.render('index', {title: 'Home', contactName: contactName, displayName: req.user? req.user.displayName: ''});
+    res.render('index', {title: 'Home', contactName: contactName, name: req.user? req.user.name: ''});
 }
 
 module.exports.displayAboutPage = (req,res,next) => {
-    res.render('about', {title: 'About', displayName: req.user? req.user.displayName: ''});
+    res.render('about', {title: 'About', name: req.user? req.user.name: ''});
 }
 
 module.exports.displayProjectsPage = (req,res,next) => {
-    res.render('projects', {title: 'Projects' , displayName: req.user? req.user.displayName: ''});
+    res.render('projects', {title: 'Projects' , name: req.user? req.user.name: ''});
 }
 
 module.exports.displayServicesPage = (req,res,next) => {
-    res.render('services', {title: 'Services', displayName: req.user? req.user.displayName: ''});
+    res.render('services', {title: 'Services', name: req.user? req.user.name: ''});
 }
 
 module.exports.displayContactPage = (req,res,next) => {
-    res.render('contact', {title: 'Contact', displayName: req.user? req.user.displayName: ''});
+    res.render('contact', {title: 'Contact', name: req.user? req.user.name: ''});
 }
 
 module.exports.processContactPage = (req,res,next) => {
@@ -37,11 +37,11 @@ module.exports.processContactPage = (req,res,next) => {
 module.exports.displayLoginPage = (req,res,next) => {
     if(!req.user)
     {
-        res.render('auth/login', 
+        res.render('secure/login', 
         {
             title: 'Login',
             messages: req.flash('loginMessage'),
-            displayName : req.user ? req.user.displayName : ''
+            name : req.user ? req.user.name : ''
         });
     }
     else{
@@ -70,7 +70,7 @@ module.exports.processLoginPage = (req,res,next) => {
             {
                 return next(err);
             }
-            return res.redirect('/book-list');
+            return res.redirect('/contacts-list');
         })
     })(req, res, next);
 };
@@ -79,11 +79,11 @@ module.exports.displayRegisterPage = (req, res, next) => {
     // check if the user is not already logged in
     if(!req.user)
     {
-        res.render('auth/register',
+        res.render('secure/register',
         {
             title: 'Register',
             messages: req.flash('registerMessage'),
-            displayName: req.user ? req.user.displayName : ''
+            name: req.user ? req.user.name : ''
         });
     }
     else
@@ -97,8 +97,10 @@ module.exports.processRegisterPage = (req,res,next) => {
     let newUser = new User({
         username: req.body.username,
         //password = req.body.password,
-        displayName: req.body.displayName,
-        email: req.body.email
+        name: req.body.name,
+        email: req.body.email,
+        phone : req.body.phone,
+        address : req.body.address
     });
 
     User.register(newUser, req.body.password, (err)=> {
@@ -113,10 +115,10 @@ module.exports.processRegisterPage = (req,res,next) => {
                 );
                 console.log('Error: User Already Exists!');
             }
-            return res.render('auth/register', {
+            return res.render('secure/register', {
                 title: 'Register',
                 messages: req.flash('registerMessage'),
-                displayName : req.user ? req.user.displayName : ''
+                name : req.user ? req.user.name : ''
             });
         }
         else
@@ -126,7 +128,7 @@ module.exports.processRegisterPage = (req,res,next) => {
             ///redirect the user and authenticate thenm
 
             return passport.authenticate('local')(req, res, () => {
-                res.redirect('/book-list')
+                res.redirect('/contacts-list')
             });
         }
     });
